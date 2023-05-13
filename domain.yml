@@ -1,0 +1,369 @@
+version: "3.1"
+
+intents:
+  - start
+
+actions:
+  - action_predict
+  - action_reset_all_slots
+
+responses:
+  utter_ask_district2:
+  - text: В якому районі хотіли б знімати житло?
+    buttons:
+    - title: Голосіївський
+      payload: '/start{"district2":"Голосіївський"}'
+    - title: Дарницький
+      payload: '/start{"district2":"Дарницький"}'
+    - title: Деснянський
+      payload: '/start{"district2":"Деснянський"}'
+    - title: Дніпровський
+      payload: '/start{"district2":"Дніпровський"}'
+    - title: Оболонський
+      payload: '/start{"district2":"Оболонський"}'
+    - title: Печерський
+      payload: '/start{"district2":"Печерський"}'
+    - title: Подільський
+      payload: '/start{"district2":"Подільський"}'
+    - title: Святошинський
+      payload: '/start{"district2":"Святошинський"}'
+    - title: Солом'янський
+      payload: /start{"district2":"Солом'янський"}
+    - title: Шевченківський
+      payload: '/start{"district2":"Шевченківський"}'
+    button_type: vertical
+
+  utter_ask_numberOfRooms:
+  - text: Скільки кімнат?
+    buttons:
+    - title: '1'
+      payload: '/start{"numberOfRooms":1}'
+    - title: '2'
+      payload: '/start{"numberOfRooms":2}'
+    - title: '3'
+      payload: '/start{"numberOfRooms":3}'
+    - title: '4'
+      payload: '/start{"numberOfRooms":4}'
+
+  utter_ask_appartment_metrage:
+  - text: |
+      Яку б хотіли площу квартири у м2? Для отримання релевантного результату,
+      будь ласка, введіть число в межах 20-150
+  utter_ask_kitchen_metrage:
+  - text: |
+      Яку б хотіли площу кухні у м2? Для отримання релевантного результату,
+      будь ласка, введіть число в межах 4-100, якщо все одно - 0
+  utter_ask_bathroom_metrage:
+  - text: |
+      Яку б хотіли площу ванної кімнати у м2. Для отримання релевантного результату,
+      будь ласка, введіть число в межах 2-50, якщо все одно - 0  
+
+  utter_ask_floor:
+  - text: |
+      А на якому поверсі хотіли б жити? (1-47). Якщо все одно, введіть 0
+
+  utter_ask_build_type:
+  - text: Якому типу будинку надаєте перевагу?
+    buttons:
+    - title: Мені не принципово
+      payload: '/start{"build_type":"None"}'
+    - title: гостинка
+      payload: '/start{"build_type":"гостинка"}'
+    - title: хрущівка
+      payload: '/start{"build_type":"хрущівка"}'
+    - title: сталінка
+      payload: '/start{"build_type":"сталінка"}'
+    - title: чеський проект
+      payload: '/start{"build_type":"чеський проект"}'
+    - title: АППС
+      payload: '/start{"build_type":"АППС"}'
+    - title: АППС-люкс
+      payload: '/start{"build_type":"АППС-люкс"}'
+    - title: БПС
+      payload: '/start{"build_type":"БПС"}'
+    - title: совмін
+      payload: '/start{"build_type":"совмін"}'
+    - title: спец. проект
+      payload: '/start{"build_type":"спец. проект"}'
+    - title: серія 96
+      payload: '/start{"build_type":"серія 96"}'
+    - title: серія 87
+      payload: '/start{"build_type":"серія 87"}'
+    - title: серія 134
+      payload: '/start{"build_type":"серія 134"}'
+    - title: серія Т
+      payload: '/start{"build_type":"серія Т"}'
+    - title: серія KП
+      payload: '/start{"build_type":"серія KП"}'
+    - title: серія КС
+      payload: '/start{"build_type":"серія КС"}'
+    button_type: vertical
+
+  utter_ask_wall_type:
+  - text: А якому типу стін?
+    buttons:
+    - title: Не принципово
+      payload: '/start{"wall_type":"None"}'
+    - title: цегляні
+      payload: '/start{"wall_type":"цегляний будинок"}'
+    - title: панельні
+      payload: '/start{"wall_type":"панельні"}'
+    - title: монолітно-каркасний
+      payload: '/start{"wall_type":"монолітно-каркасний"}'
+    - title: утеплена панель
+      payload: '/start{"wall_type":"утеплена панель"}'
+    button_type: vertical
+
+  utter_ask_is_app_complex:
+  - text: Надаєте перевагу ЖК?
+    buttons:
+    - title: Ні
+      payload: '/start{"is_app_complex":"False"}'
+    - title: Так
+      payload: '/start{"is_app_complex":"True"}'
+
+  utter_ask_is_boiler:
+  - text: Бойлер?
+    buttons:
+    - title: Ні
+      payload: '/start{"is_boiler":"False"}'
+    - title: Так
+      payload: '/start{"is_boiler":"True"}'
+
+  utter_ask_is_air_cond:
+  - text: Кондиціонер?
+    buttons:
+    - title: Ні
+      payload: '/start{"is_air_cond":"False"}'
+    - title: Так
+      payload: '/start{"is_air_cond":"True"}'
+
+  utter_ask_infrastructure:
+  - text: Для Вас важлива хороша інфраструктура?
+    buttons:
+      - title: Ні
+        payload: '/start{"infrastructure":"False"}'
+      - title: Так
+        payload: '/start{"infrastructure":"True"}'
+
+  utter_ask_is_subway:
+  - text: Для Вас важливо, щоб метро було поряд?
+    buttons:
+      - title: Ні
+        payload: '/start{"is_subway":"False"}'
+      - title: Так
+        payload: '/start{"is_subway":"True"}'
+
+  utter_ask_priceCurrency_offers:
+  - text: У якій валюті плануєте оплачувати оренду?
+    buttons:
+      - title: Українська гривня
+        payload: '/start{"priceCurrency_offers":"UAH"}'
+      - title: Долар США
+        payload: '/start{"priceCurrency_offers":"USD"}'
+
+  utter_ask_is_ukr_lang:
+  - text: Хочете, щоб орендатор розмовляв з Вами українською?
+    buttons:
+      - title: Ні
+        payload: '/start{"is_ukr_lang":"False"}'
+      - title: Звісно!
+        payload: '/start{"is_ukr_lang":"True"}'
+
+  utter_ask_is_agency:
+  - text: Хочете орендувати житло без посередників?
+    buttons:
+      - title: Так
+        payload: '/start{"is_agency":"False"}'
+      - title: Ні
+        payload: '/start{"is_agency":"True"}'
+
+  utter_submit:
+  - text: Спробувати ще раз?
+    buttons:
+      - title: Так!
+        payload: '/start'
+
+forms:
+  rent_form:
+    required_slots:
+    - district2
+    - numberOfRooms
+    - appartment_metrage
+    - kitchen_metrage
+    - bathroom_metrage
+    - floor
+    - build_type
+    - wall_type
+    - is_app_complex
+    - is_boiler
+    - is_air_cond
+    - infrastructure
+    - is_subway
+    - priceCurrency_offers
+    - is_ukr_lang
+    - is_agency
+
+entities:
+  - district2
+  - numberOfRooms
+  - build_type
+  - wall_type
+  - is_app_complex
+  - is_boiler
+  - is_air_cond
+  - infrastructure
+  - is_subway
+  - priceCurrency_offers
+  - is_ukr_lang
+  - is_agency
+
+slots:
+  district2:
+    type: text
+    influence_conversation: false
+    mappings:
+    - type: from_entity
+      entity: district2
+      conditions:
+        - active_loop: rent_form
+  numberOfRooms:
+    type: text
+    influence_conversation: false
+    mappings:
+      - type: from_entity
+        entity: numberOfRooms
+        conditions:
+          - active_loop: rent_form
+
+  appartment_metrage:
+    type: text
+    influence_conversation: false
+    mappings:
+      - type: from_text
+        conditions:
+          - active_loop: rent_form
+            requested_slot: appartment_metrage
+
+  kitchen_metrage:
+    type: text
+    influence_conversation: false
+    mappings:
+      - type: from_text
+        conditions:
+          - active_loop: rent_form
+            requested_slot: kitchen_metrage
+
+  bathroom_metrage:
+    type: text
+    influence_conversation: false
+    mappings:
+      - type: from_text
+        conditions:
+          - active_loop: rent_form
+            requested_slot: bathroom_metrage
+
+  floor:
+    type: text
+    influence_conversation: false
+    mappings:
+      - type: from_text
+        conditions:
+          - active_loop: rent_form
+            requested_slot: floor
+
+  build_type:
+    type: text
+    influence_conversation: false
+    mappings:
+      - type: from_entity
+        entity: build_type
+        conditions:
+          - active_loop: rent_form
+  wall_type:
+    type: text
+    influence_conversation: false
+    mappings:
+      - type: from_entity
+        entity: wall_type
+        conditions:
+          - active_loop: rent_form
+
+  is_app_complex:
+    type: text
+    influence_conversation: false
+    mappings:
+      - type: from_entity
+        entity: is_app_complex
+        conditions:
+          - active_loop: rent_form
+
+  is_boiler:
+    type: text
+    influence_conversation: false
+    mappings:
+      - type: from_entity
+        entity: is_boiler
+        conditions:
+          - active_loop: rent_form
+
+  is_air_cond:
+    type: text
+    influence_conversation: false
+    mappings:
+      - type: from_entity
+        entity: is_air_cond
+        conditions:
+          - active_loop: rent_form
+
+  infrastructure:
+    type: text
+    influence_conversation: false
+    mappings:
+      - type: from_entity
+        entity: infrastructure
+        conditions:
+          - active_loop: rent_form
+
+  is_subway:
+    type: text
+    influence_conversation: false
+    mappings:
+      - type: from_entity
+        entity: is_subway
+        conditions:
+          - active_loop: rent_form
+
+  priceCurrency_offers:
+    type: text
+    influence_conversation: false
+    mappings:
+      - type: from_entity
+        entity: priceCurrency_offers
+        conditions:
+          - active_loop: rent_form
+
+  is_ukr_lang:
+    type: text
+    influence_conversation: false
+    mappings:
+      - type: from_entity
+        entity: is_ukr_lang
+        conditions:
+          - active_loop: rent_form
+
+  is_agency:
+    type: text
+    influence_conversation: false
+    mappings:
+      - type: from_entity
+        entity: is_agency
+        conditions:
+          - active_loop: rent_form
+
+
+
+
+session_config:
+  session_expiration_time: 60
+  carry_over_slots_to_new_session: true

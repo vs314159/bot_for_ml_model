@@ -1,0 +1,20 @@
+version: "3.1"
+
+rules:
+
+
+- rule: Activate Appointment Form
+  steps:
+    - intent: start
+    - action: rent_form
+    - active_loop: rent_form
+
+- rule: Submit Form
+  condition:
+  - active_loop: rent_form
+  steps:
+    - action: rent_form
+    - active_loop: null
+    - action: action_predict
+    - action: utter_submit
+    - action: action_reset_all_slots
